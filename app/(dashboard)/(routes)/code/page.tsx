@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageSquare } from "lucide-react";
+import { Code, Divide } from "lucide-react";
 import Heading from "@/components/heading";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -19,8 +19,9 @@ import { Loader } from "@/components/loader";
 import { cn } from "@/lib/utils";
 import { UserAvatar } from "@/components/user-avatar";
 import { BotAvatar } from "@/components/bot-avatar";
+import ReactMarkdown from "react-markdown";
 
-const ConversationPage = () => {
+const CodePage = () => {
   const router = useRouter();
   const [messages, setMessages] = useState<ChatCompletionMessageParam[]>([]);
 
@@ -40,7 +41,7 @@ const ConversationPage = () => {
       };
 
       const newMessages = [...messages, userMessage];
-      const response = await axios.post("/api/conversation", {
+      const response = await axios.post("/api/code", {
         messages: newMessages,
       });
 
@@ -60,11 +61,11 @@ const ConversationPage = () => {
   return (
     <div>
       <Heading
-        title="Conversation"
+        title="Code Generation"
         description="Our most advanced conversation model."
-        icon={MessageSquare}
-        iconColor="text-violet-500"
-        bgColor="bg-violet-500/10"
+        icon={Code}
+        iconColor="text-green-700"
+        bgColor="bg-green-700/10"
       />
       <div className="px-4 lg:px-8">
         <div className="">
@@ -81,7 +82,7 @@ const ConversationPage = () => {
                     <FormControl className="m-0 p-0">
                       <Input
                         {...field}
-                        placeholder="What is a react hook?"
+                        placeholder="Write a python program to encrypt a text file."
                         disabled={isLoading}
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                       />
@@ -119,7 +120,21 @@ const ConversationPage = () => {
                 key={message.content?.toString()}
               >
                 {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
-                <p className="text-sm">{message.content?.toString()}</p>
+                <ReactMarkdown
+                components={{
+                  pre: ({ node, ...props}) => (
+                    <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">
+                      <pre {...props} />
+                    </div>
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="bg-black/10 rounded-lg p-1" {...props} />
+                  )
+                }}
+                className="text-sm overflow-hidden leading-7"
+                >
+                  {message.content?.toString()}
+                </ReactMarkdown>
               </div>
             ))}
           </div>
@@ -129,4 +144,4 @@ const ConversationPage = () => {
   );
 };
 
-export default ConversationPage;
+export default CodePage;
