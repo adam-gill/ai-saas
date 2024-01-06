@@ -100,6 +100,7 @@ const ConversationPage = () => {
                 - line 110 throws error, something to do with the different openai versions
                 - https://github.com/AntonioErdeljac/next13-ai-saas/tree/master
                 - https://discord.com/channels/1079557715497595013/1155104821737701498
+                - Another day, another deprecation
 
               */}
             </div>
