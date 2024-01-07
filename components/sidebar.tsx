@@ -7,6 +7,7 @@ import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, Video
 
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import { FreeCounter } from "./free-counter";
 
 const montserrat = Montserrat({ weight: "600", subsets: ["latin"]});
 
@@ -54,7 +55,12 @@ const routes = [
     },
 ]
 
-const Sidebar = () => {
+interface SidebarProps {
+    apiLimitCount: number;
+    isPro: boolean;
+};
+
+const Sidebar = ({ apiLimitCount = 0, isPro = false}: SidebarProps) => {
     const pathname = usePathname();
 
   return (
@@ -78,6 +84,7 @@ const Sidebar = () => {
             </Link>
         ))}</div>
       </div>
+      <FreeCounter isPro={isPro} apiLimitCount={apiLimitCount} />
     </div>
   );
 };

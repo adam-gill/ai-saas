@@ -70,6 +70,7 @@ const PhotoPage = () => {
       <div className="px-4 lg:px-8">
         <Form {...form}>
           <form 
+            autoComplete="off"
             onSubmit={form.handleSubmit(onSubmit)} 
             className="
               rounded-lg 
