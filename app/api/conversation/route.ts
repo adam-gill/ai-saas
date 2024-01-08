@@ -33,10 +33,7 @@ export async function POST(req: Request) {
       return new NextResponse("Free trial has expired.", { status: 403 });
     }
 
-    // ^ just started adding lines 29-34 to all generation pages
-    // 4:56:55
-    // remember to start up stripe listener to test 
-    // same with prisma
+
 
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
