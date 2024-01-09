@@ -87,7 +87,8 @@ const VideoPage = () => {
                 )}
               />
               <Button
-                className="md:mt-4 lg:mt-0 col-span-12 lg:col-span-2 w-full"
+                // className="md:mt-4 lg:mt-0 col-span-12 lg:col-span-2 w-full"\
+                className="mt-4 lg:mt-0 col-span-12 lg:col-span-2 w-full"
                 disabled={isLoading}
               >
                 Generate
@@ -102,7 +103,7 @@ const VideoPage = () => {
             </div>
           )}
           {!video && !isLoading && (
-            <Empty label="No music generated." />
+            <Empty label="No video generated." />
           )}
           {video && (
             <video controls className="w-full aspect-video rounded-lg border bg-black mt-8">

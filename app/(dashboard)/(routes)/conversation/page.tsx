@@ -96,7 +96,7 @@ const ConversationPage = () => {
                 )}
               />
               <Button
-                className="mt-4 lg:mt-0  col-span-12 lg:col-span-2 w-full"
+                className="mt-4 lg:mt-0 col-span-12 lg:col-span-2 w-full"
                 disabled={isLoading}
               >
                 Generate
