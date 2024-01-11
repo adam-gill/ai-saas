@@ -19,7 +19,7 @@
 - Vercel
 
 ## Link 🔗 👇
-<a href="https://bird-clone-beige.vercel.app/"><img width="1457" alt="Screenshot 2024-01-10 at 23 37 51" src="https://github.com/adam-gill/ai-saas/assets/110919227/b2ca5e64-f539-43a3-a1cf-8af0b6e25f14"></a>
+<a href="https://ai-saas-nine-delta.vercel.app/"><img width="1457" alt="Screenshot 2024-01-10 at 23 37 51" src="https://github.com/adam-gill/ai-saas/assets/110919227/b2ca5e64-f539-43a3-a1cf-8af0b6e25f14"></a>
 
 
 
