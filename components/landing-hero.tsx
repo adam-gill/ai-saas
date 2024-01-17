@@ -16,7 +16,7 @@ export const LandingHero = () => {
           <TypewriterComponent
             options={{
               strings: [
-                "Chatbot.",
+                "Chat Generation.",
                 "Image Generation.",
                 "Video Generation.",
                 "Music Generation.",
