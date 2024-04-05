@@ -35,3 +35,5 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
+
+// database will sleep after a period of inactivity
